@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Contracts - Lumexia Technologies</title>
+  <link rel="stylesheet" href="portfolio-styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/Lumexia Technologies 2.jpg" alt="Lumexia Logo" />
+      </div>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="active"><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="contact-section">
+
+    <!-- Contact Info -->
+    <div id="contact-info-section" class="contact">
+          <form class="contact-info-form" id="contactinfoForm">
+            <h2>We're ready to listen...</h2>
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required />
+      
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required />
+      
+            <label for="phone">Phone Number*</label>
+            <input type="tel" id="phone" name="phone" required />
+      
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+      
+            <div class="submit-container">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+          </form>
+      </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-overlay">
+      <div class="footer-sections">
+        <div class="footer-intro">
+          <div class="footer-brand">
+            <img src="Images/Lumexia Technologies2.PNG" alt="Lumexia Logo Small" />
+            <h2>Lumexia</h2>
+          </div>
+          <p>Lumexia Technologies is a woman-founded digital studio delivering intelligent, cross-platform solutions that shine.</p>
+          <div class="icons">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="index.html?modal=website-modal#services">Custom Website Solutions</a></li>
+            <li><a href="index.html?modal=mobile-modal#services">Mobile App Development</a></li>
+            <li><a href="index.html?modal=uiux-modal#services">UI/UX Design</a></li>
+            <li><a href="index.html?modal=cross-modal#services">Cross-Platform Dev</a></li>
+          </ul>
+        </div>
+
+        <div>
+            <h3>Agreements & Policies</h3> 
+            <ul>
+              <li><a href="mailto:mwoodson161@gmail.com">Contact</a></li>
+              <li><a href="docs/Lumexia_Service_Agreement.pdf" target="_blank">Service Agreement</a></li>
+              <li><a href="docs/Lumexia_Terms_and_Conditions.pdf" target="_blank">Terms & Conditions</a></li>
+              <li><a href="docs/Lumexia_Privacy_Policy.pdf" target="_blank">Privacy Policy</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="js File/script.js"></script>
+  <script type="module" src="js File/firebase.js"></script>
+  <button id="backToTop" title="Go to top">⬆</button>
+</body>
+</html>
