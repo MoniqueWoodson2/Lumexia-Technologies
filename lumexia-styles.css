@@ -339,20 +339,10 @@ ul.nav li.active a {
   margin-bottom: 0.5rem;
 }
 
-/*.review-form h2 {
-  display: block;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}*/
 
 .contact-form input,
 .contact-form select,
-.contact-form textarea
-/*.review-form input,
-.review-form select,
-.review-form textarea*/ {
+.contact-form textarea {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -547,7 +537,7 @@ ul.nav li.active a {
   .services-list {
     flex-direction: column;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
 
   .services {
