@@ -500,6 +500,11 @@ ul.nav li.active a {
   color: white;
 }
 
+#backToTop ion-icon {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
 
 /* =====================================
    FOOTER STYLES
