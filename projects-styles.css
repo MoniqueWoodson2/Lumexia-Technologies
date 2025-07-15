@@ -121,6 +121,10 @@ body {
 .github-button-wrapper {
   margin-top: 20px;
   text-align: center;
+  display: flex;         /* add flex layout */
+  justify-content: center;
+  gap: 12px;              /* space between buttons */
+  flex-wrap: wrap;        /* wrap on smaller screens */
 }
 
 .github-button {
@@ -132,6 +136,8 @@ body {
   text-decoration: none;
   border-radius: 6px;
   display: inline-block;
+  min-width: 160px;       /* consistent button width */
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
