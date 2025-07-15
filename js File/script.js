@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modals = {
       0: document.getElementById("website-modal"),
       1: document.getElementById("mobile-modal"),
-      2: document.getElementById("uiux-modal"),
-      3: document.getElementById("cross-modal"),
+      2: document.getElementById("cross-modal"),
     };
     const closeButtons = document.querySelectorAll(".close-button");
   

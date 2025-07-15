@@ -502,9 +502,14 @@ ul.nav li.active a {
   }
 
   .home-hero .overlay {
-    flex-direction: column;
-    padding: 3rem 1rem;
-    text-align: center;
+    padding: 5rem 1rem; /* Reduce from 6.2rem */
+    justify-content: flex-start; /* Move content higher */
+    align-items: center;
+  }
+
+  .home-hero {
+    height: auto; /* allow content to define height */
+    padding-top: 1px; /* slightly reduce padding */
   }
 
   .home-hero h1 {
@@ -527,7 +532,7 @@ ul.nav li.active a {
   }
 
   .about-image img {
-    max-width: 90%;
+    max-width: 70%;
     margin-bottom: 1.5rem;
   }
 
@@ -549,7 +554,6 @@ ul.nav li.active a {
 
   .review {
     width: 100%;
-    max-width: 90%;
     padding: 1.5rem;
     box-sizing: border-box;
   }

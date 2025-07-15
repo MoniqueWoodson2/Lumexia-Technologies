@@ -611,30 +611,23 @@ ul.nav li.active a {
 /* =====================================
    RESPONSIVE STYLES
 ===================================== */
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
   }
 
   ul.nav {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   .logo img {
-    width: 180px;
-  }
-
-  .footer-sections {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .about-image img {
-    max-width: 80%;
-    margin-bottom: 2rem;
+    width: 150px;
   }
 
   .about-me-container {
@@ -644,47 +637,96 @@ ul.nav li.active a {
   }
 
   .about-me-details {
-    text-align: left;
+    flex: 1 1 100%;
+    text-align: center;
   }
 
-  .about-facts li {
-    text-align: left;
+  .about-me-photo img {
+    width: 150px;
+    height: 150px;
   }
 
-  .tech-card {
-    padding: 20px 15px;
-  }
-
-  .tech-card h3 {
-    font-size: 18px;
-  }
-
-  .tech-card li {
-    font-size: 14px;
+  .tech-grid {
+    flex-direction: column;
+    align-items: center;
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    align-items: center;
   }
 
-  .project-card {
+  .project-card img {
+    height: auto;
+  }
+
+  .footer-sections {
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .resume-button {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+
+  .contact-info-form {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .contact-info-form label {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .contact-info-form input,
+  .contact-info-form select,
+  .contact-info-form textarea {
+    width: 95%;
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    gap: 0.5rem;
+  }
+
+  .about-me-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .project-buttons a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .tech-card {
+    padding: 16px;
   }
 
   .contact-section {
     padding: 40px 15px;
   }
 
-  .contact-section section {
-    padding: 20px;
-  }
-
-  .contact-section h2 {
-    font-size: 22px;
-  }
-
-  .contact-section p,
-  .contact-section ul li {
-    font-size: 15px;
+  .submit-button {
+    font-size: 14px;
   }
 }
