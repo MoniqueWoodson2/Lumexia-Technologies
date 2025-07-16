@@ -27,6 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  document.querySelectorAll(".package-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active from all tabs and contents
+      document.querySelectorAll(".package-tab").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".package-content").forEach(content => content.classList.remove("active"));
+
+      // Add active to clicked tab and corresponding content
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
 
   // === CONTACT MODAL CLOSE FUNCTIONALITY ===
 if (contactModal) {

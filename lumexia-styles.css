@@ -369,12 +369,53 @@ jQuery Slider Banner
 /* =====================================
 Packages Section 
 ====================================*/
-
-.packages-container {
+.package-nav {
   display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto 1rem;
+  flex-wrap: wrap;
+}
+
+.package-tab {
+  background-color: #333;
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: medium;
+  transition: background 0.3s;
+}
+
+.package-tab.active,
+.package-tab:hover {
+  background-color: goldenrod;
+}
+
+.package-content {
+  display: none;
+  width: 100%; /* ensure full width for container */
+  animation: fadeIn 0.5s ease-in-out;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+}
+
+.package-content.active {
+  display: flex; /* show and enable layout */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.packages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1200px;
   margin: 6rem auto 4rem;
   padding: 0 2rem;
@@ -385,15 +426,16 @@ Packages Section
   text-align: center;
   color: goldenrod;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .package-subheading {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
   font-size: 1.1rem;
   color: #ddd;
+  text-align: center;
 }
 
 .package-box {
@@ -461,7 +503,8 @@ Packages Section
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;}
+  transition: background 0.3s ease;
+}
 
 .order-button:hover {
   background-color: goldenrod;

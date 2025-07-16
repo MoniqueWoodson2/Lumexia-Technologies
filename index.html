@@ -97,12 +97,22 @@
   </div>
 
   <!-- Packages Section -->
-  <div class="packages-container">
-    <h2 class="package-heading">Website Design Packages</h2>
-    <p class="package-subheading">
-      Choose from our carefully tailored website design packages, crafted to suit businesses of all sizes—from startups to growing enterprises. <br>Each package offers high-quality features, responsive design options, and fast delivery.
-    </p>
+<section class="packages-container">
+  <h2 class="package-heading">Website Design Packages</h2>
+  <p class="package-subheading">
+    Choose from our carefully tailored website design packages, crafted to suit businesses of all sizes—from startups to growing enterprises. <br>
+    Each package offers high-quality features, responsive design options, and fast delivery.
+  </p>
 
+  <!-- Package Navigation Tabs -->
+  <nav class="package-nav">
+    <button class="package-tab active" data-target="web-design">Web Design Packages</button>
+    <button class="package-tab" data-target="ecommerce">E-Commerce Packages</button>
+    <button class="package-tab" data-target="branding">Branding Packages</button>
+  </nav>
+
+  <!-- Web Design Packages -->
+  <div id="web-design" class="package-content active">
     <!-- Basic Package -->
     <div class="package-box">
       <h3>Basic Package</h3>
@@ -134,7 +144,7 @@
         <li>100% Satisfaction + Money Back Guarantee</li>
       </ul>
       <p class="note">Mobile responsive +$200, CMS +$250</p>
-      <button class="order-button">Start Basic</button>
+      <button class="order-button">Start Startup</button>
     </div>
 
     <!-- Professional Package -->
@@ -151,7 +161,7 @@
         <li>100% Unique Design + SEO Ready</li>
       </ul>
       <p class="note">Mobile responsive +$200</p>
-      <button class="order-button">Start Basic</button>
+      <button class="order-button">Start Professional</button>
     </div>
 
     <!-- Corporate Package -->
@@ -170,9 +180,72 @@
         <li>Complete Deployment + Hosting Setup</li>
       </ul>
       <p class="note">Mobile responsive included • eCommerce ready</p>
-      <button id="openContactModal" class="order-button">Start Basic</button>
+      <button id="openContactModal" class="order-button">Start Corporate</button>
     </div>
+  </div>
 
+  <!-- E-Commerce Packages -->
+<div id="ecommerce" class="package-content">
+  <!-- E-Commerce Basic Shop Package -->
+  <div class="package-box">
+    <h3>E-Commerce Basic Shop Package</h3>
+    <p class="price">$1,498 <span class="discounted-price">$749</span></p>
+    <ul>
+      <li>Up to 20 Product Listings</li>
+      <li>Shopping Cart + Checkout</li>
+      <li>Payment Gateway Integration</li>
+      <li>Basic Admin Panel</li>
+      <li>Easy Product Search</li>
+    </ul>
+    <button class="order-button">Start Basic</button>
+  </div>
+
+  <!-- E-Commerce Starter Shop Package -->
+  <div class="package-box">
+    <h3>E-Commerce Starter Shop Package</h3>
+    <p class="price">$2,498 <span class="discounted-price">$1,249</span></p>
+    <ul>
+      <li>Customized Design</li>
+      <li>Up-To 50 Products</li>
+      <li>Content Management System (CMS)</li>
+      <li>Shopping Cart Integration</li>
+      <li>Payment Module Integration</li>
+      <li>Easy Product Search</li>
+      <li>Dedicated Designer & Developer</li>
+    </ul>
+    <button class="order-button">Start Starter</button>
+  </div>
+
+  <!-- E-Commerce Professional Shop Package -->
+  <div class="package-box">
+    <h3>E-Commerce Professional Shop Package</h3>
+    <p class="price">$3,998 <span class="discounted-price">$1,999</span></p>
+    <ul>
+      <li>Customized Design</li>
+      <li>Up-To 100–250 Products</li>
+      <li>Content Management System (CMS)</li>
+      <li>Full Shopping Cart Integration</li>
+      <li>Payment Module Integration</li>
+      <li>Easy Product Search</li>
+      <li>Product Reviews</li>
+      <li>5 Promotional Banners</li>
+    </ul>
+    <button class="order-button">Start Professional</button>
+  </div>
+</div>
+
+  <!-- Branding Packages -->
+  <div id="branding" class="package-content">
+    <div class="package-box">
+      <h3>Branding Logo & Brand Kit Package</h3>
+      <p class="price">$598 <span class="discounted-price">$299</span></p>
+      <ul>
+        <li>3 Logo Concepts</li>
+        <li>Social Media Kit</li>
+        <li>Brand Guidelines</li>
+      </ul>
+      <button class="order-button">Start Branding</button>
+    </div>
   </div>
 </section>
 
@@ -194,11 +267,18 @@
       <label for="package">Select Your Package*</label>
       <select id="package" name="package">
         <option value="">-- Choose a Package --</option>
-        <option value="Custom Website Solutions – Starter">Website – Starter</option>
-        <option value="Custom Website Solutions – Professional">Website – Professional</option>
-        <option value="Custom Website Solutions – Business">Website – Business</option>
-        <option value="Custom Website Solutions – Enterprise">Website – Enterprise</option>
-        <option value="Custom Website Solutions – Corporate">Website – Corporate</option>
+        <optgroup label="Web Design">
+          <option value="Basic Package">Basic Package</option>
+          <option value="Startup Package">Startup Package</option>
+          <option value="Professional Package">Professional Package</option>
+          <option value="Corporate Package">Corporate Package</option>
+        </optgroup>
+        <optgroup label="E-Commerce">
+          <option value="Shop Starter">Shop Starter</option>
+        </optgroup>
+        <optgroup label="Branding">
+          <option value="Logo & Brand Kit">Logo & Brand Kit</option>
+        </optgroup>
       </select>
 
       <label for="message">Message</label>
@@ -332,7 +412,7 @@
         <div>
           <h3>Company</h3>
           <ul>
-            
+            <li><a href="#services">Our Services</a></li>
             <li><a href="#services" data-modal="website-modal">Custom Website Solutions</a></li>
             <li><a href="#services" data-modal="mobile-modal">Mobile App Design & Development</a></li>
             <li><a href="#services" data-modal="cross-modal">Cross-Platform Development</a></li>
