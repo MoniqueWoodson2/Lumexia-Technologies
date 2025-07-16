@@ -185,3 +185,6 @@ $(document).ready(function () {
   // Initial display
   showSlide(currentIndex);
 });
+
+// == FOOTER ==
+

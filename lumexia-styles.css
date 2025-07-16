@@ -13,13 +13,22 @@ body {
   /*background-color: #111;*/
 }
 
+.section-divider {
+  border: none;
+  height: 4px;
+  background-color: maroon;
+  width: 80%;
+  margin: 60px auto; /* Adjust spacing as needed */
+  border-radius: 2px;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 header {
   background: transparent;
-  border: 1px solid goldenrod;
+  border: 3px solid goldenrod;
   margin-top: 1px;
   border-radius: 1px;
   padding: 10px;
@@ -74,7 +83,6 @@ ul.nav li.active a {
   border-radius: 4px;
   transition: 0.3s ease;
 }
-
 /* ===============================
    HOME HERO
 =============================== */
@@ -86,16 +94,20 @@ ul.nav li.active a {
   justify-content: center;
   padding-top: 100px;
   box-sizing: border-box;
-  position: relative;
+  position: relative; /* required for absolute positioning inside */
   color: beige;
   text-align: center;
+  overflow: hidden;
 }
 
 .home-hero .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  padding: 6.2rem;
+  position: absolute; /* key change */
+  top: 0;
+  left: 0;
+  z-index: 1; /* optional: stack above background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +167,7 @@ jQuery Slider Banner
   margin: 3rem auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 15px maroon;
+  box-shadow: 0 0 15px transparent;
 }
 
 .slider-header {
@@ -169,7 +181,6 @@ jQuery Slider Banner
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: goldenrod;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -252,7 +263,8 @@ jQuery Slider Banner
 }
 
 .slider-nav button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  /*background-color: rgba(0, 0, 0, 0.8);*/
+  background-color: maroon;
 }
 
 /* ===============================
@@ -264,7 +276,7 @@ jQuery Slider Banner
   justify-content: center;
   gap: 3rem;
   padding: 4rem 2rem;
-  background-color: black;
+  /*background-color: black;*/
   color: beige;
   flex-wrap: wrap;
 }
@@ -318,22 +330,24 @@ jQuery Slider Banner
 }
 
 /* ===============================
-   OUR SERVICES
+ OUR SERVICES
 =============================== */
 .service {
   color: beige;
-  padding: 6rem 2rem; /* increased from 3rem to 6rem */
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   text-align: center;
-  min-height: 100vh; /* ensure it fills more vertical space */
-}
-
-.service h2 {
+ }
+ 
+ .service h2 {
   color: goldenrod;
   font-size: 2.5rem;
   margin-bottom: 1.5rem; /* slightly more spacing under the heading */
-}
-
-.web-services-grid {
+ }
+ 
+ .web-services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns fixed */
   justify-items: center;
@@ -342,42 +356,48 @@ jQuery Slider Banner
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.web-service-card {
+ }
+ 
+ .web-services-grid :hover {
+  background-color: goldenrod;
+ }
+ 
+ .web-service-card {
   background: beige;
   border-radius: 16px;
+  border: 5px solid maroon;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.web-service-card img {
+ }
+ 
+ 
+ .web-service-card img {
   width: 60px;
   height: 60px;
   margin-bottom: 1rem;
-}
-
-.web-service-card h3 {
+ }
+ 
+ .web-service-card h3 {
   color: maroon;
-}
-
-.web-service-card p{
+ }
+ 
+ .web-service-card p{
   color: black;
-}
-
-/* =====================================
-Packages Section 
-====================================*/
-.package-nav {
+ }
+ 
+ /* =====================================
+ Packages Section 
+ ====================================*/
+ .package-nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin: 2rem auto 1rem;
   flex-wrap: wrap;
-}
-
-.package-tab {
+ }
+ 
+ .package-tab {
   background-color: #333;
   color: white;
   padding: 20px 20px;
@@ -385,61 +405,66 @@ Packages Section
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
+  font-family: Georgia;
   font-size: medium;
   transition: background 0.3s;
-}
-
-.package-tab.active,
-.package-tab:hover {
+ }
+ 
+ .package-tab.active,
+ .package-tab:hover {
   background-color: goldenrod;
-}
-
-.package-content {
+ }
+ 
+ .package-content {
   display: none;
   width: 100%; /* ensure full width for container */
   animation: fadeIn 0.5s ease-in-out;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-}
-
-.package-content.active {
+ }
+ 
+ .package-content.active {
   display: flex; /* show and enable layout */
-}
-
-@keyframes fadeIn {
+ }
+ 
+ @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-.packages-container {
+ }
+ 
+ .packages-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
   margin: 6rem auto 4rem;
-  padding: 0 2rem;
-}
-
-.package-heading {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+ }
+ 
+ .package-heading {
   width: 100%;
   text-align: center;
   color: goldenrod;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-}
-
-.package-subheading {
+ }
+ 
+ .package-subheading {
   width: 100%;
   max-width: 800px;
   margin: 0 auto 3rem;
   font-size: 1.1rem;
   color: #ddd;
   text-align: center;
-}
-
-.package-box {
+ }
+ 
+ .package-box {
   background: beige;
+  border: 5px solid maroon;
   border-radius: 16px;
   padding: 2rem;
   width: 100%;
@@ -447,52 +472,56 @@ Packages Section
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease;
-}
-
-.package-box:hover {
+ }
+ 
+ .package-box:hover {
   transform: translateY(-8px);
-}
-
-.package-box h3 {
+ }
+ 
+ .package-box h3 {
   font-size: 1.6rem;
   color: maroon;
   margin-bottom: 0.8rem;
-}
-
-.package-box .price {
+ }
+ 
+ .package-box .price {
+  font-family: 'Times New Roman';
   font-size: 1.5rem;
   font-weight: bold;
   color: #222;
   margin-bottom: 0.5rem;
-}
-
-.discounted-price {
+ }
+ 
+ .discounted-price {
   color: #e63946;
+  font-family: 'Times New Roman';
   font-size: 1.1rem;
   text-decoration: line-through;
   margin-left: 8px;
-}
-
-.package-box ul {
+ }
+ 
+ .package-box ul {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
   text-align: left;
-}
-
-.package-box ul li {
+ }
+ 
+ .package-box ul li {
   margin: 0.5rem 0;
+  font-family: 'Times New Roman';
   color: black;
-  font-size: 0.95rem;
-}
-
-.package-box .note {
+  font-size: 1rem;
+ }
+ 
+ .package-box .note {
+  font-family: 'Times New Roman';
   font-size: 0.9rem;
   margin-top: 1rem;
   color: #888;
-}
-
-.order-button {
+ }
+ 
+ .order-button {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
@@ -500,21 +529,21 @@ Packages Section
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-family: Georgia;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
-}
-
-.order-button:hover {
+ }
+ 
+ .order-button:hover {
   background-color: goldenrod;
   color: white;
-}
-
-/* ===============================
-   MODAL SHARED STYLES
-=============================== */
-.modal {
+ }
+ /* ===============================
+  MODAL SHARED STYLES
+ =============================== */
+ .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -525,40 +554,41 @@ Packages Section
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
-
-.modal.hidden {
+ }
+ 
+ .modal.hidden {
   display: none;
-}
-
-.modal-content {
+ }
+ 
+ .modal-content {
   background: beige;
+  border: 5px solid maroon;
   color: black;
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
   max-width: 600px;
   position: relative;
-}
-
-.modal-content h2{
+ }
+ 
+ .modal-content h2{
   color: black;
-}
-
-.modal-content ul {
+ }
+ 
+ .modal-content ul {
   text-align: left;
   color: maroon;
   padding-left: 1.5rem;
   list-style-type: none;
-}
-
-.modal-content ul li {
+ }
+ 
+ .modal-content ul li {
   margin-bottom: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-}
-
-.close-button {
+ }
+ 
+ .close-button {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -566,26 +596,26 @@ Packages Section
   font-weight: bold;
   color: darkred;
   cursor: pointer;
-}
-
-/* Contact - Package - Review Modals */
-.contact-form,
-.review-form {
+ }
+ 
+ /* Contact - Package - Review Modals */
+ .contact-form,
+ .review-form {
   margin-top: 1rem;
   text-align: left;
-}
-
-.contact-form label{
+ }
+ 
+ .contact-form label{
   display: block;
   color: black;
   font-weight: bold;
   margin-bottom: 0.5rem;
-}
-
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+ }
+ 
+ 
+ .contact-form input,
+ .contact-form select,
+ .contact-form textarea {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -593,9 +623,9 @@ Packages Section
   border-radius: 4px;
   background: #fdf6e3;
   font-family: Georgia, serif;
-}
-
-.submit-button {
+ }
+ 
+ .submit-button {
   background-color: goldenrod;
   color: maroon;
   border: none;
@@ -604,40 +634,40 @@ Packages Section
   font-weight: bold;
   cursor: pointer;
   width: 100%;
-}
-
-.submit-button:hover {
+ }
+ 
+ .submit-button:hover {
   background-color: maroon;
   color: white;
-}
-
-/* ===============================
-   REVIEW SECTION
-=============================== */
-.reviews {
+ }
+ 
+ /* ===============================
+  REVIEW SECTION
+ =============================== */
+ .reviews {
   color: beige;
   padding: 4rem 2rem;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-}
-.review-header {
+ }
+ .review-header {
   text-align: center;
   margin-bottom: 1rem;
-}
-
-.review-header h2 {
+ }
+ 
+ .review-header h2 {
   color: maroon;
   font-size: 2.2rem;
   margin-bottom: 1rem;
-}
-
-.review-btn-wrapper {
+ }
+ 
+ .review-btn-wrapper {
   text-align: center;
   margin-bottom: 2rem;
-}
-
-.open-review-btn {
+ }
+ 
+ .open-review-btn {
   background-color: goldenrod;
   color: maroon;
   border: none;
@@ -647,23 +677,23 @@ Packages Section
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
-}
-
-.open-review-btn:hover {
+ }
+ 
+ .open-review-btn:hover {
   background-color: maroon;
   color: white;
-}
-
-
-.review-list {
+ }
+ 
+ 
+ .review-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
   margin-top: 3rem;
-}
-
-.review {
+ }
+ 
+ .review {
   background-color: #222;
   border: 1px solid goldenrod;
   border-radius: 8px;
@@ -671,24 +701,23 @@ Packages Section
   width: 280px;
   text-align: left;
   box-shadow: 0 0 10px rgba(218, 165, 32, 0.2);
-}
-
-.review h4 {
+ }
+ 
+ .review h4 {
   color: maroon;
   margin-bottom: 0.5rem;
-}
-
-.stars {
+ }
+ 
+ .stars {
   color: goldenrod;
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-}
-
-.review p {
+ }
+ 
+ .review p {
   font-size: 0.95rem;
   line-height: 1.5;
-}
-
+ }
 
 /* ===============================
    MEDIA QUERIES
@@ -775,6 +804,16 @@ Packages Section
     padding: 1.5rem;
   }
 
+  .web-services-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    gap: 1.5rem;
+  }
+
+  .web-service-card {
+    width: 100%;
+    max-width: 90%;
+  }
+
   .review {
     width: 100%;
     padding: 1.5rem;
@@ -813,6 +852,7 @@ Packages Section
   }
 }
 
+/* Mobile Friendly */
 @media (max-width: 480px) {
   .home-hero h1 {
     font-size: 1.7rem;
