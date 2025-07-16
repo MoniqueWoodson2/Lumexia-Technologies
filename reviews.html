@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumexia Technologies</title>
+  <link rel="stylesheet" href="lumexia-styles.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Images/Lumexia Technologies 2.jpg" alt="Lumexia Logo" />
+      </div>
+      <ul class="nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+    </div>
+  </header>
+
+  <main>
+<!-- Review Section -->
+<section class="reviews" id="reviews">
+    <div class="review-header">
+      <h2>Our Clients Testimonials</h2>
+    </div>
+  
+    <!-- Demo Reviews -->
+    <div class="review-btn-wrapper">
+      <button id="openReviewModal" class="open-review-btn">Leave a Review</button>
+    </div>
+  
+    <div class="review-list">
+      <div class="review">
+        <h4>Jessica Lane</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Lumexia delivered a sleek website beyond my expectations! Professional, fast, and creative team.</p>
+      </div>
+      <div class="review">
+        <h4>Marcus Evans</h4>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Their mobile app development team really impressed me—clean code, responsive UI, and helpful post-launch support.</p>
+      </div>
+      <div class="review">
+        <h4>Alicia Gomez</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>From planning to final design, their UX/UI service was top-tier. Highly recommended for startups!</p>
+      </div>
+    </div>
+  </section>
+  <!-- STARS ⭐⭐⭐⭐⭐ -->
+
+
+<!-- Review Modal -->
+<div id="review-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>We’d love your feedback</h2>
+    <form class="contact-form" id="submitReview">
+      <label for="reviewerName">Name*</label>
+      <input type="text" id="reviewerName" name="reviewerName" required />
+
+      <label for="starRating">Star Rating*</label>
+      <select id="starRating" name="starRating" required>
+        <option value="">-- Select Rating --</option>
+        <option value="⭐">⭐</option>
+        <option value="⭐⭐">⭐⭐</option>
+        <option value="⭐⭐⭐">⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <label for="reviewMessage">Message*</label>
+      <textarea id="reviewMessage" name="reviewMessage" rows="4" required></textarea>
+
+      <div class="submit-container">
+        <button type="submit" class="submit-button">Submit Review</button>
+      </div>
+    </form>
+  </div>
+</div>
+  
+    </section>
+
+  </main>
+
+
+<!--Footer Section-->
+<footer class="footer">
+    <div class="footer-overlay">
+      <div class="footer-sections">
+        <div class="footer-intro">
+            <div class="footer-brand">
+                <img src="Images/Lumexia Technologies2.PNG" alt="Lumexia Logo Small" />
+                <h2>Lumexia</h2>
+              </div>              
+              <p>
+                Lumexia Technologies is a woman-founded digital studio specializing in custom website design that captivates and converts. <br>We bring your brand to life online with elegant, user-focused designs that reflect clarity, creativity, and purpose—illuminating your digital presence one pixel at a time.
+              </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="packages.html">Website Design Packages</a></li>
+            <li><a href="webdesigns.html">Our Clients Designs</a></li>
+            <li><a href="reviews.html">Our Testimonals</a></li>
+        </ul>
+        </div>
+
+        <div>
+          <h3>Agreements & Policies</h3> 
+          <ul>
+            <li><a href="mailto:lumexiatechnologies@gmail.com">Contact</a></li>
+            <li><a href="docs/Lumexia_Service_Agreement.pdf" target="_blank">Service Agreement</a></li>
+            <li><a href="docs/Lumexia_Terms_and_Conditions.pdf" target="_blank">Terms & Conditions</a></li>
+            <li><a href="docs/Lumexia_Privacy_Policy.pdf" target="_blank">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+<!-- Ionicons CDN -->
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js File/script.js"></script>
+<script type="module" src="js File/firebase.js"></script>
+
+<button id="backToTop" title="Go to top">
+  <ion-icon name="arrow-up-outline"></ion-icon>
+</button>
+
+</body>
+</html>
