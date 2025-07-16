@@ -103,7 +103,7 @@ if (contactForm) {
     const selectedPackage = document.getElementById("package").value;
     const message = document.getElementById("message").value.trim();
 
-    if (!name || !email || !phone || !selectedPackage) {
+    if (!name || !email || !phone || !selectedPackage || !message) {
       alert("⚠️ Please fill in all required fields.");
       return;
     }
@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const phone = form.phone.value.trim();
-    //const packageSelected = form.package.value;
     const message = form.message.value.trim();
 
     try {
@@ -147,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         name,
         email,
         phone,
-        //package: packageSelected,
         message,
         submittedAt: new Date()
       });

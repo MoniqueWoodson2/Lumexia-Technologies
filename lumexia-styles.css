@@ -10,6 +10,7 @@ body {
   padding: 0;
   font-family: Georgia;
   background-color: black;
+  /*background-color: #111;*/
 }
 
 html {
@@ -18,7 +19,6 @@ html {
 
 header {
   background: transparent;
-  /*background: beige;*/
   border: 1px solid goldenrod;
   margin-top: 1px;
   border-radius: 1px;
@@ -68,7 +68,6 @@ ul.nav li a:hover {
 }
 
 ul.nav li.active a {
-  /*background-color: beige;*/
   color: maroon;
   font-weight: bold;
   padding: 5px;
@@ -146,7 +145,115 @@ ul.nav li.active a {
   color: white;
 }
 
+/* ================================
+jQuery Slider Banner
+================================ */
+.slider-banner {
+  position: relative;
+  max-width: 90%;
+  height: 800px;
+  margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px maroon;
+}
 
+.slider-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.slider-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: goldenrod;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slider-header p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 500px;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 50px auto 0 auto;
+  padding-bottom: 20px; /* ✅ Adds space from the bottom */}
+
+.slide-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.slide.active {
+  display: flex;
+}
+
+/* Navigation Arrows */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment */
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none; /* Prevents overlap issues */
+}
+
+.slider-nav button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all; /* Allows click on buttons */
+}
+
+.slider-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 /* ===============================
    ABOUT US
@@ -214,7 +321,6 @@ ul.nav li.active a {
    OUR SERVICES
 =============================== */
 .service {
-  background-color: #111;
   color: beige;
   padding: 6rem 2rem; /* increased from 3rem to 6rem */
   text-align: center;
@@ -227,45 +333,139 @@ ul.nav li.active a {
   margin-bottom: 1.5rem; /* slightly more spacing under the heading */
 }
 
-.services-list {
+.web-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns fixed */
+  justify-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.web-service-card {
+  background: beige;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.web-service-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.web-service-card h3 {
+  color: maroon;
+}
+
+.web-service-card p{
+  color: black;
+}
+
+/* =====================================
+Packages Section 
+====================================*/
+
+.packages-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem; /* more spacing between service cards */
-  margin-top: 3rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 6rem auto 4rem;
+  padding: 0 2rem;
 }
 
-.services {
-  background-color: #222;
-  border: 1px solid maroon;
-  padding: 2rem; /* more space inside the box */
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
-  /*min-height: 300px;  ensure consistent box height */
-}
-
-.services h3 {
-  color: goldenrod;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.service-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 15px auto;
-}
-
-.service-icon img {
+.package-heading {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid maroon;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  text-align: center;
+  color: goldenrod;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.package-subheading {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.package-box {
+  background: beige;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.package-box:hover {
+  transform: translateY(-8px);
+}
+
+.package-box h3 {
+  font-size: 1.6rem;
+  color: maroon;
+  margin-bottom: 0.8rem;
+}
+
+.package-box .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.discounted-price {
+  color: #e63946;
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.package-box ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.package-box ul li {
+  margin: 0.5rem 0;
+  color: black;
+  font-size: 0.95rem;
+}
+
+.package-box .note {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #888;
+}
+
+.order-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: maroon;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;}
+
+.order-button:hover {
+  background-color: goldenrod;
+  color: white;
 }
 
 /* ===============================
@@ -352,22 +552,6 @@ ul.nav li.active a {
   font-family: Georgia, serif;
 }
 
-.start-project {
-  background-color: goldenrod;
-  border: none;
-  color: black;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.start-project:hover {
-  background-color: maroon;
-  color: white;
-}
-
 .submit-button {
   background-color: goldenrod;
   color: maroon;
@@ -388,7 +572,6 @@ ul.nav li.active a {
    REVIEW SECTION
 =============================== */
 .reviews {
-  /*background-color: black;*/
   color: beige;
   padding: 4rem 2rem;
   text-align: center;
@@ -435,9 +618,6 @@ ul.nav li.active a {
   justify-content: center;
   gap: 2em;
   margin-top: 3rem;
-  /*width: 100%;
-  margin: 0 auto;
-  max-width: 1200px;*/
 }
 
 .review {

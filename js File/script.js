@@ -1,277 +1,176 @@
 // script.js
 
-// Open modal
-
 document.addEventListener("DOMContentLoaded", () => {
-    const serviceBoxes = document.querySelectorAll(".services");
-    const modals = {
-      0: document.getElementById("website-modal"),
-      1: document.getElementById("mobile-modal"),
-      2: document.getElementById("cross-modal"),
-    };
-    const closeButtons = document.querySelectorAll(".close-button");
-  
-    serviceBoxes.forEach((box, index) => {
-      box.addEventListener("click", () => {
-        modals[index].classList.remove("hidden");
-      });
-  
-      box.addEventListener("mouseover", () => {
-        box.style.cursor = "pointer";
-        box.style.boxShadow = "0 0 15px rgba(255, 215, 0, 0.4)";
-      });
-  
-      box.addEventListener("mouseout", () => {
-        box.style.boxShadow = "none";
-      });
-    });
-  
-    closeButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.closest(".modal").classList.add("hidden");
-      });
-    });
-  
-    window.addEventListener("click", (event) => {
-      if (event.target.classList.contains("modal")) {
-        event.target.classList.add("hidden");
+  // === MODAL FUNCTIONALITY ===
+  const modals = document.querySelectorAll(".modal");
+  const contactModal = document.getElementById("contact-modal");
+  const contactSelect = document.getElementById("package");
+  const closeButtons = document.querySelectorAll(".close-button");
+  const serviceBoxes = document.querySelectorAll(".service-box");
+
+  // === ORDER BUTTONS OPEN CONTACT MODAL ===
+  const orderButtons = document.querySelectorAll(".order-button");
+
+  orderButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedPackage = button.getAttribute("data-package"); // e.g. "Startup", "Pro", etc.
+
+      // Set package dropdown value if applicable
+      if (contactSelect && selectedPackage) {
+        contactSelect.value = selectedPackage;
+      }
+
+      // Open contact modal
+      if (contactModal) {
+        contactModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
       }
     });
   });
-  
 
-  // Open modal by ID
-
-  document.querySelectorAll('footer [data-modal]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-  
-      // Scroll to the services section
-      document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
-  
-      // Open the corresponding modal after scroll delay
-      const modalId = this.getAttribute('data-modal');
-      setTimeout(() => {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-          modal.classList.remove('hidden');
-        }
-      }, 600); // Delay slightly after scroll
-    });
-  });
-
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const modalId = urlParams.get("modal");
-    
-    if (modalId) {
-      const targetModal = document.getElementById(modalId);
-      const serviceSection = document.getElementById("services");
-
-      // Scroll to the services section
-      if (serviceSection) {
-        serviceSection.scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Open modal after slight delay
-      setTimeout(() => {
-        if (targetModal) {
-          targetModal.classList.remove("hidden");
-        }
-      }, 500); // Adjust delay if needed
-
-      // Clean up the URL so modal doesn't reopen on reload
-      const cleanURL = window.location.origin + window.location.pathname + "#services";
-      window.history.replaceState({}, document.title, cleanURL);
+  // === CONTACT MODAL CLOSE FUNCTIONALITY ===
+if (contactModal) {
+  // Close when clicking outside the modal content
+  contactModal.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      contactModal.classList.add("hidden");
+      document.body.style.overflow = "auto";
     }
   });
 
+  // Close when clicking the close button inside the modal
+  const contactCloseBtn = contactModal.querySelector(".close-button");
+  if (contactCloseBtn) {
+    contactCloseBtn.addEventListener("click", () => {
+      contactModal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    });
+  }
+}
 
-  window.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const modalId = params.get("modal");
-
-    if (modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scroll
-      }
-
-      // Optional: Scroll to services section
-      const servicesSection = document.getElementById("services");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-
-    // Handle modal close
-    document.querySelectorAll(".close-button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.closest(".modal").classList.add("hidden");
-        document.body.style.overflow = "auto";
-        history.replaceState(null, "", window.location.pathname); // Remove ?modal= param
-      });
+  // Hover effect for service boxes
+  serviceBoxes.forEach((box) => {
+    box.addEventListener("mouseover", () => {
+      box.style.cursor = "pointer";
+      box.style.boxShadow = "0 0 15px rgba(255, 215, 0, 0.4)";
+    });
+    box.addEventListener("mouseout", () => {
+      box.style.boxShadow = "none";
     });
   });
 
-
-  function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.remove("hidden");
+  // Open modal from URL param ?modal=
+  const urlParams = new URLSearchParams(window.location.search);
+  const modalIdFromUrl = urlParams.get("modal");
+  if (modalIdFromUrl) {
+    const targetModal = document.getElementById(modalIdFromUrl);
+    const serviceSection = document.getElementById("services");
+    if (serviceSection) {
+      serviceSection.scrollIntoView({ behavior: "smooth" });
     }
+
+    setTimeout(() => {
+      if (targetModal) {
+        targetModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+    }, 500);
+
+    // Clean URL
+    const cleanURL = window.location.origin + window.location.pathname + "#services";
+    window.history.replaceState({}, document.title, cleanURL);
   }
 
-  // Close modals when clicking the X
-  document.querySelectorAll('.close-button').forEach(button => {
-    button.addEventListener('click', function() {
-      this.closest('.modal').classList.add('hidden');
-    });
-  });
-
-  // Close modal when clicking outside content
-  window.addEventListener("click", e => {
-    document.querySelectorAll(".modal").forEach(modal => {
-      if (e.target === modal) {
-        modal.classList.add("hidden");
-      }
-    });
-  });
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const serviceBoxes = document.querySelectorAll(".services");
-    const packageModals = document.querySelectorAll(".modal:not(#contact-modal)");
-    const contactModal = document.getElementById("contact-modal");
-    const contactSelect = document.getElementById("package");
-    const allCloseButtons = document.querySelectorAll(".close-button");
-  
-    // Handle hover and pointer for services
-    serviceBoxes.forEach((box) => {
-      box.addEventListener("mouseover", () => {
-        box.style.cursor = "pointer";
-        box.style.boxShadow = "0 0 15px rgba(255, 215, 0, 0.4)";
-      });
-      box.addEventListener("mouseout", () => {
-        box.style.boxShadow = "none";
-      });
-    });
-  
-    // Handle Start Project buttons inside package modals
-    const startButtons = document.querySelectorAll(".modal .start-project");
-  
-    startButtons.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const parentModal = btn.closest(".modal-content");
-        const titleText = parentModal.querySelector("h2")?.textContent || "";
-  
-        // Close all modals
-        packageModals.forEach(modal => modal.classList.add("hidden"));
-  
-        // Pre-fill package dropdown with matching value
-        for (const option of contactSelect.options) {
-          if (titleText.includes(option.text)) {
-            option.selected = true;
-            break;
-          }
-        }
-  
-        // Show contact form modal
-        contactModal.classList.remove("hidden");
-      });
-    });
-  
-    // Close any modal
-    allCloseButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.closest(".modal").classList.add("hidden");
-      });
-    });
-  
-    // Close modal when clicking outside
-    window.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal")) {
-        e.target.classList.add("hidden");
-      }
-    });
-  });
-  
-
-
-
-  document.addEventListener("DOMContentLoaded", () => {
+  // === REVIEW MODAL ===
   const reviewForm = document.getElementById("submitReview");
   const reviewList = document.querySelector(".review-list");
-
   const reviewModal = document.getElementById("review-modal");
   const openReviewModal = document.getElementById("openReviewModal");
-  const closeReviewModal = reviewModal.querySelector(".close-button");
+  const closeReviewModal = reviewModal?.querySelector(".close-button");
 
-  openReviewModal.addEventListener("click", () => {
-    reviewModal.classList.remove("hidden");
-  });
+  if (openReviewModal && closeReviewModal && reviewModal) {
+    openReviewModal.addEventListener("click", () => {
+      reviewModal.classList.remove("hidden");
+    });
 
-  closeReviewModal.addEventListener("click", () => {
-    reviewModal.classList.add("hidden");
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === reviewModal) {
+    closeReviewModal.addEventListener("click", () => {
       reviewModal.classList.add("hidden");
-    }
-  });
+    });
 
-  
-  reviewForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("reviewerName").value.trim();
-    const stars = document.getElementById("starRating").value;
-    const message = document.getElementById("reviewMessage").value.trim();
-
-    if (name && stars && message) {
-      const reviewDiv = document.createElement("div");
-      reviewDiv.classList.add("review");
-
-      reviewDiv.innerHTML = `
-        <h4>${name}</h4>
-        <div class="stars">${stars}</div>
-        <p>${message}</p>
-      `;
-
-      reviewList.prepend(reviewDiv);
-      reviewForm.reset();
-      reviewModal.classList.add("hidden");
-    }
-  });
-});
-
-  // Show/hide back-to-top button on scroll
-  document.addEventListener("DOMContentLoaded", function () {
-    const backToTopBtn = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
+    window.addEventListener("click", (e) => {
+      if (e.target === reviewModal) {
+        reviewModal.classList.add("hidden");
       }
+    });
+  }
+
+  // === BACK TO TOP BUTTON ===
+  const backToTopBtn = document.getElementById("backToTop");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
     });
 
     backToTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+});
+
+// === GLOBAL OPEN/CLOSE MODAL FUNCTIONS ===
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
+}
+
+// === JQUERY SLIDER ===
+$(document).ready(function () {
+  let currentIndex = 0;
+  const slides = $(".slide");
+  const total = slides.length;
+
+  function showSlide(index) {
+    slides.removeClass("active");
+    slides.eq(index).addClass("active");
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % total;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + total) % total;
+    showSlide(currentIndex);
+  }
+
+  // Auto-play every 4 seconds
+  let autoSlide = setInterval(nextSlide, 4000);
+
+  // Manual controls
+  $("#nextSlide").click(function () {
+    clearInterval(autoSlide);
+    nextSlide();
+    autoSlide = setInterval(nextSlide, 4000); // restart autoplay
   });
 
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
-  }
-  
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-  
+  $("#prevSlide").click(function () {
+    clearInterval(autoSlide);
+    prevSlide();
+    autoSlide = setInterval(nextSlide, 4000); // restart autoplay
+  });
 
-
+  // Initial display
+  showSlide(currentIndex);
+});
