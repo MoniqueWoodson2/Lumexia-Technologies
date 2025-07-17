@@ -220,9 +220,11 @@ jQuery Slider Banner
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
+  color: maroon;
   font-size: 1.5rem;
-  background-color: rgba(0,0,0,0.6);
+  font-family: 'Times New Roman';
+  /*background-color: rgba(0,0,0,0.6);*/
+  background-color: black;
   padding: 10px 20px;
   border-radius: 8px;
 }
@@ -359,13 +361,13 @@ jQuery Slider Banner
  }
  
  .web-services-grid :hover {
-  background-color: goldenrod;
+  border-color: maroon;
  }
  
  .web-service-card {
   background: beige;
   border-radius: 16px;
-  border: 5px solid maroon;
+  border: 5px solid goldenrod;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -380,6 +382,7 @@ jQuery Slider Banner
  
  .web-service-card h3 {
   color: maroon;
+  font-size: x-large;
  }
  
  .web-service-card p{
@@ -413,6 +416,7 @@ jQuery Slider Banner
  .package-tab.active,
  .package-tab:hover {
   background-color: goldenrod;
+  color: maroon;
  }
  
  .package-content {
@@ -443,6 +447,10 @@ jQuery Slider Banner
   padding-bottom: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
+ }
+
+ .packages-container h2 {
+  color: maroon;
  }
  
  .package-heading {
@@ -476,13 +484,23 @@ jQuery Slider Banner
  
  .package-box:hover {
   transform: translateY(-8px);
+  border-color: goldenrod;
  }
  
  .package-box h3 {
   font-size: 1.6rem;
-  color: maroon;
+  color: goldenrod;
   margin-bottom: 0.8rem;
  }
+
+ .package-box .tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
+  line-height: 1.4;
+}
  
  .package-box .price {
   font-family: 'Times New Roman';
@@ -499,20 +517,31 @@ jQuery Slider Banner
   text-decoration: line-through;
   margin-left: 8px;
  }
- 
+
  .package-box ul {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
   text-align: left;
- }
- 
- .package-box ul li {
+}
+
+.package-box ul li {
   margin: 0.5rem 0;
   font-family: 'Times New Roman';
   color: black;
   font-size: 1rem;
- }
+  position: relative;
+  padding-left: 1.5rem; /* Space for bullet */
+}
+
+.package-box ul li::before {
+  content: "▶"; /* Triangle symbol */
+  position: absolute;
+  left: 0;
+  color: goldenrod; /* You can change this color */
+  font-size: 0.8rem;
+  top: 0.1rem;
+}
  
  .package-box .note {
   font-family: 'Times New Roman';
@@ -526,7 +555,7 @@ jQuery Slider Banner
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background-color: maroon;
-  color: white;
+  color: goldenrod;
   text-decoration: none;
   font-weight: bold;
   font-family: Georgia;
@@ -537,7 +566,7 @@ jQuery Slider Banner
  }
  
  .order-button:hover {
-  background-color: goldenrod;
+  background-color: maroon;
   color: white;
  }
  /* ===============================
@@ -680,7 +709,7 @@ jQuery Slider Banner
  }
  
  .open-review-btn:hover {
-  background-color: maroon;
+  background-color: goldenrod;
   color: white;
  }
  

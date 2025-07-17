@@ -406,7 +406,7 @@ ul.nav li.active a {
 .contact-info-form {
   /*background: #fdf5e6;*/
   background-color: beige;
-  border: 2px solid goldenrod;
+  border: 5px solid maroon;
   border-radius: 10px;
   padding: 30px;
   max-width: 700px;
