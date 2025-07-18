@@ -11,7 +11,12 @@ body {
   font-family: Georgia;
   background-color: black;
   /*background-color: #111;*/
+  margin-top: 120px; /* adjust based on your header height */
+
 }
+section {
+  scroll-margin-top: 130px; /* adjust to match your fixed header height */
+} 
 
 .section-divider {
   border: none;
@@ -27,11 +32,17 @@ html {
 }
 
 header {
-  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
   border: 3px solid goldenrod;
-  margin-top: 1px;
   border-radius: 1px;
   padding: 10px;
+  margin: 0; /* Remove margin to avoid shifting */
+  box-sizing: border-box; /* Ensures border/padding don't overflow */
+  z-index: 1000; /* ensures it's above other content */
 }
 
 .nav-container {
@@ -998,6 +1009,19 @@ jQuery Slider Banner
   padding: 5px;
   border-radius: 4px;
   transition: 0.3s ease;
+}
+
+.footer-rights {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid goldenrod;
+}
+
+.footer-rights p {
+  color: beige;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .icons {

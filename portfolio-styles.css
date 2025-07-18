@@ -7,6 +7,8 @@ body {
   font-family: Georgia, serif;
   background-color: black;
   color: black;
+  margin-top: 120px; /* adjust based on your header height */
+
 }
 
 html {
@@ -23,11 +25,17 @@ h2 {
    HEADER & NAVIGATION
 ===================================== */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: black;
   border: 3px solid goldenrod;
-  padding: 10px;
   border-radius: 1px;
-  margin-top: 1px;
+  padding: 10px;
+  margin: 0; /* Remove margin to avoid shifting */
+  box-sizing: border-box; /* Ensures border/padding don't overflow */
+  z-index: 1000; /* ensures it's above other content */
 }
 
 .nav-container {
@@ -588,6 +596,19 @@ ul.nav li.active a {
     line-height: 1.6;
   }
   
+  .footer-rights {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid goldenrod;
+  }
+  
+  .footer-rights p {
+    color: beige;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
   .icons {
       margin-top: 1rem;
     }
