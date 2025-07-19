@@ -632,11 +632,23 @@ ul.nav li.active a {
   
 
 
-/* =====================================
-   RESPONSIVE STYLES
-===================================== */
+    /* ===============================
+    MEDIA QUERIES
+ =============================== */
+ 
+ /* Responsive for Tablets and Phones (480px to 1024px) */
+ @media (max-width: 1024px) {
+  body {
+    margin-top: 150px; /* Ensures full header height is respected */
+    overflow-x: hidden;
+  }
 
-@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
   .nav-container {
     flex-direction: column;
     align-items: center;
@@ -721,36 +733,25 @@ ul.nav li.active a {
     font-size: 16px;
   }
 
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-sections > div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-intro {
+    text-align: center;
+  }
+
   #backToTop {
     bottom: 20px;
     right: 20px;
-  }
-}
+ 
+ }
 
-@media (max-width: 480px) {
-  .nav-container {
-    gap: 0.5rem;
-  }
-
-  .about-me-photo img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .project-buttons a {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .tech-card {
-    padding: 16px;
-  }
-
-  .contact-section {
-    padding: 40px 15px;
-  }
-
-  .submit-button {
-    font-size: 14px;
-  }
 }
