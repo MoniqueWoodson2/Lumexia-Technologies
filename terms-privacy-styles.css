@@ -1,98 +1,87 @@
-/* ===============================
-   BASE STYLES
-=============================== */
+/* =====================================
+   GLOBAL BASE STYLES
+===================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background-color: black;
+  color: black;
+  margin-top: 200px; /* adjust based on your header height */
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .hidden {
-    display: none;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Georgia;
-    background-color: black;
-    /*background-color: #111;*/
-    margin-top: 120px; /* adjust based on your header height */
+  display: none;
+}
 
-  }
-  
-  .section-divider {
-    border: none;
-    height: 4px;
-    background-color: maroon;
-    width: 80%;
-    margin: 60px auto; /* Adjust spacing as needed */
-    border-radius: 2px;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: black;
-    border: 3px solid goldenrod;
-    border-radius: 1px;
-    padding: 10px;
-    margin: 0; /* Remove margin to avoid shifting */
-    box-sizing: border-box; /* Ensures border/padding don't overflow */
-    z-index: 1000; /* ensures it's above other content */
-  }
-  
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logo img {
-    width: 250px;
-    height: auto;
-    border-radius: 4px;
-  
-  }
-  
-  ul.nav {
-    list-style: none;
-    display: flex;
-    justify-content: right;
-    gap: 50px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  ul.nav li {
-    display: inline-block;
-  }
-  
-  ul.nav li a {
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-    color: goldenrod;
-    font-weight: bold;
-  }
-  
-  ul.nav li a:hover {
-    color: maroon;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 4px;
-    transition: 0.3s ease;
-  }
-  
-  ul.nav li.active a {
-    color: maroon;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 4px;
-    transition: 0.3s ease;
-  }
 
-  /* ===============================
+/* =====================================
+   HEADER & NAVIGATION
+===================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  border: 3px solid goldenrod;
+  border-radius: 1px;
+  padding: 10px;
+  margin: 0; /* Remove margin to avoid shifting */
+  box-sizing: border-box; /* Ensures border/padding don't overflow */
+  z-index: 1000; /* ensures it's above other content */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 250px;
+  height: auto;
+  border-radius: 4px;
+}
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nav li {
+  display: inline-block;
+}
+
+ul.nav li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: goldenrod;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+ul.nav li a:hover,
+ul.nav li.active a {
+  color: maroon;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+
+/* ===============================
    FOOTER STYLE 
 =============================== */
 .footer {
@@ -318,8 +307,39 @@
     border-radius: 6px;
   }
   
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
+/* ===============================
+    MEDIA QUERIES
+ =============================== */
+ 
+ /* Responsive for Tablets and Phones (480px to 1024px) */
+ @media (max-width: 1024px) {
+  body {
+    margin-top: 250px; /* Ensures full header height is respected */
+    overflow-x: hidden;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  ul.nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
     .container {
       padding: 1.5rem;
     }
@@ -331,4 +351,25 @@
     h2 {
       font-size: 1.5rem;
     }
+
+    .footer-sections {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .footer-sections > div {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-intro {
+      text-align: center;
+    }
+  
+    #backToTop {
+      bottom: 20px;
+      right: 20px;
+   
+   }
   }
