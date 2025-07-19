@@ -418,29 +418,39 @@ body {
     }
   
   
-  /* =====================================
-     RESPONSIVE STYLES
-  ===================================== */
-  @media (max-width: 768px) {
-    
-    .nav-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 10px;
-    }
-  
-    ul.nav {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-top: 10px;
-    }
-  
-    ul.nav li a {
-      font-size: 18px;
-      padding: 8px 12px;
-    }
+  /* ===============================
+    MEDIA QUERIES
+ =============================== */
+ 
+ /* Responsive for Tablets and Phones (480px to 1024px) */
+ @media (max-width: 1024px) {
+  body {
+    margin-top: 200px; /* Ensures full header height is respected */
+    overflow-x: hidden;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  ul.nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
 
     .project-header {
       flex-direction: column;

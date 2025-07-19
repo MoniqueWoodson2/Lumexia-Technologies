@@ -632,14 +632,14 @@ ul.nav li.active a {
   
 
 
-    /* ===============================
+/* ===============================
     MEDIA QUERIES
  =============================== */
  
  /* Responsive for Tablets and Phones (480px to 1024px) */
  @media (max-width: 1024px) {
   body {
-    margin-top: 150px; /* Ensures full header height is respected */
+    margin-top: 200px; /* Ensures full header height is respected */
     overflow-x: hidden;
   }
 
