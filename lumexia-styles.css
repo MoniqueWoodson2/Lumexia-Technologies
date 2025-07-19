@@ -29,6 +29,7 @@ section {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 130px; /* adjust based on your fixed header height */
 }
 
 header {
@@ -43,6 +44,9 @@ header {
   margin: 0; /* Remove margin to avoid shifting */
   box-sizing: border-box; /* Ensures border/padding don't overflow */
   z-index: 1000; /* ensures it's above other content */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .nav-container {
@@ -94,6 +98,40 @@ ul.nav li.active a {
   border-radius: 4px;
   transition: 0.3s ease;
 }
+
+
+/* ========== COLLAPSIBLE HEADER STYLES FOR MOBILE ========== */
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: goldenrod;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* Collapsed Header */
+.header-collapsed {
+  height: 60px;
+  padding: 0 1rem;
+  overflow: hidden;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+/* Expanded Header */
+.header-expanded {
+  height: auto;
+  padding: 10px 1rem;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+
 /* ===============================
    HOME HERO
 =============================== */
@@ -760,162 +798,6 @@ jQuery Slider Banner
  }
 
 /* ===============================
-   MEDIA QUERIES
-=============================== */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 10px;
-  }
-
-  ul.nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  ul.nav li a {
-    font-size: 18px;
-    padding: 8px 12px;
-  }
-
-  .home-hero {
-    padding-top: 60px;
-    height: auto;
-    background-position: center top;
-    background-size: cover;
-  }
-
-  .home-hero .overlay {
-    padding: 5rem 1rem; /* Reduce from 6.2rem */
-    justify-content: flex-start; /* Move content higher */
-    align-items: center;
-  }
-
-  .home-hero {
-    height: auto; /* allow content to define height */
-    padding-top: 1px; /* slightly reduce padding */
-  }
-
-  .home-hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero-subtext {
-    font-size: 1rem;
-  }
-
-  .hero-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .about-us {
-    flex-direction: column-reverse;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
-  .about-image img {
-    max-width: 70%;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-content h2 {
-    font-size: 2rem;
-  }
-
-  .services-list {
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-
-  .services {
-    width: 100%;
-    max-width: 90%;
-    padding: 1.5rem;
-  }
-
-  .web-services-grid {
-    grid-template-columns: 1fr; /* Stack cards vertically on small screens */
-    gap: 1.5rem;
-  }
-
-  .web-service-card {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  .review {
-    width: 100%;
-    padding: 1.5rem;
-    box-sizing: border-box;
-  }
-
-  .review-list {
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 1.5rem;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  .footer-sections {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .footer-intro,
-  .footer-sections > div {
-    width: 100%;
-    text-align: center;
-  }
-
-  #backToTop {
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 14px;
-    font-size: 16px;
-  }
-}
-
-/* Mobile Friendly */
-@media (max-width: 480px) {
-  .home-hero h1 {
-    font-size: 1.7rem;
-  }
-
-  .hero-subtext {
-    font-size: 0.95rem;
-  }
-
-  .about-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .service h2 {
-    font-size: 1.8rem;
-  }
-
-  .review-header h2 {
-    font-size: 1.8rem;
-  }
-}
-
-/* ===============================
    FOOTER STYLE 
 =============================== */
 .footer {
@@ -1070,4 +952,140 @@ jQuery Slider Banner
 #backToTop ion-icon {
   font-size: 24px;
   vertical-align: middle;
+}
+
+/* ===============================
+   MEDIA QUERIES
+=============================== */
+
+/* Responsive for Tablets and Phones (480px to 1024px) */
+@media (max-width: 1024px) {
+  body {
+    margin-top: 145px; /* Ensures full header height is respected */
+    overflow-x: hidden;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 250px;
+    height: auto;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: goldenrod;
+    z-index: 1001;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* Hide nav by default */
+  ul.nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid goldenrod;
+    margin-top: 1rem;
+  }
+
+  /* Show nav when header is expanded */
+  header.header-expanded ul.nav {
+    display: flex;
+  }
+
+  /* Optional: Add a smooth hide animation (optional styling) */
+  ul.nav.closing {
+    animation: fadeOutNav 0.3s forwards;
+  }
+
+  @keyframes fadeOutNav {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+  }
+
+  ul.nav li a {
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+    color: goldenrod;
+  }
+
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.1rem;
+  }
+
+  .about-us {
+    flex-direction: column-reverse;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .web-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .web-service-card,
+  .package-box,
+  .review {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-sections > div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-intro {
+    text-align: center;
+  }
+
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+  }
 }

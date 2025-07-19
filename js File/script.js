@@ -188,3 +188,19 @@ $(document).ready(function () {
 
 // == FOOTER ==
 
+
+// == Header ==
+
+const toggleBtn = document.querySelector('.menu-toggle');
+  const header = document.querySelector('header');
+  const navLinks = document.querySelectorAll('ul.nav a');
+
+  toggleBtn.addEventListener('click', () => {
+    header.classList.toggle('header-expanded');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('header-expanded'); // collapse the nav
+    });
+  });
