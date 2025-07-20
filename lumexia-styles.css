@@ -44,9 +44,15 @@ header {
   margin: 0; /* Remove margin to avoid shifting */
   box-sizing: border-box; /* Ensures border/padding don't overflow */
   z-index: 1000; /* ensures it's above other content */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+}
+
+/* Hamburger style */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: goldenrod;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .nav-container {
@@ -971,6 +977,10 @@ jQuery Slider Banner
     padding: 1rem;
   }
 
+  .hamburger {
+    display: block;
+  }
+
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
@@ -984,50 +994,27 @@ jQuery Slider Banner
     display: block;
   }
 
-  .menu-toggle {
-    display: block;
-    font-size: 2.5rem;
-    background: none;
-    border: none;
-    color: goldenrod;
-    z-index: 1001;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+  
 
-  /* Hide nav by default */
   ul.nav {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    position: absolute;
+    top: 100px;
+    right: 20px;
     background-color: black;
-    width: 100%;
-    padding: 1rem;
-    border-top: 1px solid goldenrod;
-    margin-top: 1rem;
+    border: 2px solid goldenrod;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 999;
   }
 
-  /* Show nav when header is expanded */
-  header.header-expanded ul.nav {
+  ul.nav li {
+    margin-bottom: 15px;
+  }
+
+  ul.nav.show {
     display: flex;
-  }
-
-  /* Optional: Add a smooth hide animation (optional styling) */
-  ul.nav.closing {
-    animation: fadeOutNav 0.3s forwards;
-  }
-
-  @keyframes fadeOutNav {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
-  }
-
-  ul.nav li a {
-    font-size: 18px;
-    padding: 10px 0;
-    display: block;
-    color: goldenrod;
   }
 
   .home-hero h1 {
@@ -1067,6 +1054,35 @@ jQuery Slider Banner
     padding: 1.5rem;
     max-height: 90vh;
     overflow-y: auto;
+  }
+
+  .slider-banner {
+    height: auto;
+    margin: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .slider-wrapper {
+    height: 400px;
+  }
+
+  .slide img {
+    margin-top: 20px;
+    max-height: 350px;
+    padding-bottom: 15px;
+  }
+
+  .slide-caption {
+    font-size: 1.2rem;
+    bottom: 20px;
+    padding: 8px 16px;
+  }
+
+  .slider-nav button {
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    padding: 8px;
   }
 
   .footer-sections {

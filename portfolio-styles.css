@@ -41,6 +41,15 @@ header {
   z-index: 1000; /* ensures it's above other content */
 }
 
+/* Hamburger style */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: goldenrod;
+  cursor: pointer;
+  padding: 10px;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -83,6 +92,8 @@ ul.nav li.active a {
   padding: 5px;
   transition: 0.3s ease;
 }
+
+
 
 
 /* =====================================
@@ -641,32 +652,48 @@ ul.nav li.active a {
  
  /* Responsive for Tablets and Phones (480px to 1024px) */
  @media (max-width: 1024px) {
-  body {
-    margin-top: 200px; /* Ensures full header height is respected */
-    overflow-x: hidden;
-  }
-
   header {
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
   }
 
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+  .hamburger {
+    display: block;
   }
 
-  ul.nav {
-    flex-direction: column;
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    width: 100%;
   }
 
   .logo img {
-    width: 150px;
+    width: 250px;
+    height: auto;
+    display: block;
+  }
+
+  ul.nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: black;
+    border: 2px solid goldenrod;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  ul.nav li {
+    margin-bottom: 15px;
+  }
+
+  ul.nav.show {
+    display: flex;
   }
 
   .about-me-container {
@@ -677,7 +704,7 @@ ul.nav li.active a {
 
   .about-me-details {
     flex: 1 1 100%;
-    text-align: center;
+    text-align:center;
   }
 
   .about-me-photo img {

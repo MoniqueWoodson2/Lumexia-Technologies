@@ -191,16 +191,39 @@ $(document).ready(function () {
 
 // == Header ==
 
-const toggleBtn = document.querySelector('.menu-toggle');
-  const header = document.querySelector('header');
-  const navLinks = document.querySelectorAll('ul.nav a');
+function toggleMenu() {
+  const nav = document.getElementById('navMenu');
+  nav.classList.toggle('show');
 
-  toggleBtn.addEventListener('click', () => {
-    header.classList.toggle('header-expanded');
-  });
+  // Only add listeners if nav is shown
+  if (nav.classList.contains('show')) {
+    // Click outside to close
+    document.addEventListener('click', handleClickOutside);
+    // Scroll to close
+    window.addEventListener('scroll', handleScrollClose);
+  }
+}
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      header.classList.remove('header-expanded'); // collapse the nav
-    });
-  });
+function handleClickOutside(event) {
+  const nav = document.getElementById('navMenu');
+  const toggleBtn = document.getElementById('menuToggle'); // ID of your menu button
+
+  // If click is outside the nav menu and toggle button
+  if (!nav.contains(event.target) && !toggleBtn.contains(event.target)) {
+    nav.classList.remove('show');
+    cleanupListeners();
+  }
+}
+
+function handleScrollClose() {
+  const nav = document.getElementById('navMenu');
+  if (nav.classList.contains('show')) {
+    nav.classList.remove('show');
+    cleanupListeners();
+  }
+}
+
+function cleanupListeners() {
+  document.removeEventListener('click', handleClickOutside);
+  window.removeEventListener('scroll', handleScrollClose);
+}
