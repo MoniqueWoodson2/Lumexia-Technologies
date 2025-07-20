@@ -535,116 +535,110 @@ ul.nav li.active a {
    FOOTER STYLES
 ===================================== */
 .footer {
-    background: url('Images/background.jpg') no-repeat center center/cover;
-    padding: 1rem 2rem;
-    color: beige;
-    margin-top: 1rem;
-  }
-  
-  .footer-overlay {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  
-  .footer-sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  
-  .footer-sections > div {
-    flex: 1 1 200px;
-  }
-  
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-brand img {
-    width: 40px;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .footer-brand h2 {
-    margin: 0;
-    color: maroon;
-  }
-  
-  .footer-sections h3 {
-    color: goldenrod;
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-sections ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-sections a {
-    color: beige;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.5rem;
-    transition: 0.3s ease;
-  }
-  
-  .footer-sections a:hover {
-    color: maroon;
-    font-weight: bold;
-    border-radius: 4px;
-  }
-  
-  .footer-intro p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .footer-rights {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid goldenrod;
-  }
-  
-  .footer-rights p {
-    color: beige;
-    font-size: 0.95rem;
-    margin: 0;
-  }
+  background: url('Images/background.jpg') no-repeat center center/cover;
+  padding: 1rem 2rem;
+  color: beige;
+  position: relative;
+  margin-top: 1rem;
+}
 
-  .icons {
-      margin-top: 1rem;
-    }
-    
-    .icons a {
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 12px;
-    }
-    
-    .icons ion-icon {
-      color: white;
-      font-size: 30px;
-      transition: 0.3s ease;
-    }
-    
-    .icons ion-icon:hover {
-      color: goldenrod;
-      transform: scale(1.1);
-    }
-  
+.footer-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
+}
 
+.footer-intro {
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+.footer-intro h2 {
+  color: maroon;
+  margin-bottom: 0.5rem;
+}
+
+.footer-intro p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand img {
+  width: 40px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.footer-brand h2 {
+  color: maroon;
+  margin: 0;
+}
+
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-sections > div {
+  flex: 1 1 200px;
+}
+
+.footer-sections h3 {
+  color: goldenrod;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 5;
+}
+
+.footer-sections a {
+  color: beige;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sections a:hover {
+  /*background-color: beige;*/
+  color: maroon;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.footer-rights {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid goldenrod;
+}
+
+.footer-rights p {
+  color: beige;
+  font-size: 0.95rem;
+  margin: 0;
+}
 
 /* ===============================
     MEDIA QUERIES
@@ -726,11 +720,6 @@ ul.nav li.active a {
     height: auto;
   }
 
-  .footer-sections {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   .resume-button {
     font-size: 18px;
     padding: 10px 16px;
@@ -761,21 +750,6 @@ ul.nav li.active a {
     width: 100%;
     padding: 14px;
     font-size: 16px;
-  }
-
-  .footer-sections {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .footer-sections > div {
-    width: 100%;
-    text-align: center;
-  }
-
-  .footer-intro {
-    text-align: center;
   }
 
   #backToTop {

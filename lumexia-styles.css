@@ -994,8 +994,6 @@ jQuery Slider Banner
     display: block;
   }
 
-  
-
   ul.nav {
     display: none;
     flex-direction: column;
@@ -1083,21 +1081,6 @@ jQuery Slider Banner
     width: 40px;
     font-size: 1.5rem;
     padding: 8px;
-  }
-
-  .footer-sections {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .footer-sections > div {
-    width: 100%;
-    text-align: center;
-  }
-
-  .footer-intro {
-    text-align: center;
   }
 
   #backToTop {
