@@ -340,23 +340,23 @@ ul.nav li.active a {
   .logo img {
     width: 150px;
   }
-    .container {
-      padding: 1.5rem;
-    }
+  .container {
+    padding: 1.5rem;
+  }
   
-    h1 {
-      font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
   
-    h2 {
-      font-size: 1.5rem;
-    }
+  h2 {
+    font-size: 1.5rem;
+  }
 
-    .footer-sections {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
   
     .footer-sections > div {
       width: 100%;
