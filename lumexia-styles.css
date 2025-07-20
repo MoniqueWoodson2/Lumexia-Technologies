@@ -564,14 +564,6 @@ jQuery Slider Banner
   color: #222;
   margin-bottom: 0.5rem;
  }
- 
- .discounted-price {
-  color: #e63946;
-  font-family: 'Times New Roman';
-  font-size: 1.1rem;
-  text-decoration: line-through;
-  margin-left: 8px;
- }
 
  .package-box ul {
   list-style: none;
@@ -590,11 +582,12 @@ jQuery Slider Banner
 }
 
 .package-box ul li::before {
-  content: "▶"; /* Triangle symbol */
+  content: ">"; /* Triangle symbol */
   position: absolute;
   left: 0;
   color: goldenrod; /* You can change this color */
-  font-size: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   top: 0.1rem;
 }
  
