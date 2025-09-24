@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "lumexia-technologies"
+  },
+  "targets": {
+    "lumexia-technologies": {
+      "hosting": {
+        "live": [
+          "lumexia-technologies"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
