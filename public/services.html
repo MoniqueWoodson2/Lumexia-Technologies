@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumexia Technologies — Our Services</title>
+  <link rel="icon" type="image/png" href="Images/Lumexia Technologies2.PNG" />
+  <link rel="stylesheet" href="styleSheet/lumexia-styles.css" />
+</head>
+<body>
+  <!-- Progress bar (header effect uses this) -->
+  <div id="progressbar" aria-hidden="true"></div>
+
+  <!-- Header mount (loaded by script.js) -->
+  <div id="header-container"></div>
+
+  <main>
+    <!-- Our Services Section ONLY -->
+    <section class="service reveal" id="services">
+      <h2>Our Services</h2>
+      <p>
+        At Lumexia Technologies, we specialize in creating experiences that blend design and technology.<br />
+        Whether you need pixel-perfect UI mockups, a fully functional website, or both—we’ve got you covered.
+      </p>
+
+      <!-- Services Overview -->
+      <div class="web-services-grid">
+        <!-- UI Design -->
+        <div class="web-service-card">
+          <img src="Images/services4.png" alt="UI Design Services" />
+          <h3>UI Design</h3>
+          <p>
+            Beautiful, user-focused designs crafted in Figma to bring your vision to life.
+            Includes wireframes, high-fidelity mockups, interactive prototypes, and full design systems.
+          </p>
+        </div>
+
+        <!-- Website Development -->
+        <div class="web-service-card">
+          <img src="Images/services3.png" alt="Website Development" />
+          <h3>Website Development</h3>
+          <p>
+            Responsive, fast, and secure websites built with HTML, CSS, JavaScript, and modern frameworks.
+            Optimized for performance, accessibility, and mobile-first experiences.
+          </p>
+        </div>
+
+        <!-- Full Website + UI Design -->
+        <div class="web-service-card">
+          <img src="Images/services1.png" alt="Full Website + UI Design" />
+          <h3>Full Website + UI Design</h3>
+          <p>
+            End-to-end solutions: from initial concepts to final deployment.
+            We handle UI/UX design and full-stack development, ensuring your site looks stunning and works flawlessly.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer mount (loaded by script.js) -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js File/script.js"></script>
+  <script type="module" src="js File/firebase.js"></script>
+
+  <!-- Back to top -->
+  <button id="backToTop" title="Go to top" aria-label="Back to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
+</body>
+</html>

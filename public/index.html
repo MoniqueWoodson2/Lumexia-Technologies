@@ -10,6 +10,7 @@
 <body>
   <!-- Slim progress bar -->
   <div id="progressbar" aria-hidden="true"></div>
+  
 
   <!-- Header -->
   <header>
@@ -40,7 +41,7 @@
         <div class="hero-content">
           <h1>Where Ideas Find Their Light</h1>
           <p class="hero-subtext">Welcome to Lumexia Technologies — where innovation meets elegance, and every digital solution is built to shine.</p>
-          <p class="hero-quote">“The future is built by those who dare to see what others overlook. At Lumexia, we bring that vision to life—brilliantly.”</p>
+          <p class="hero-quote">“The future is built by those who dare to see what others overlook.<br> At Lumexia, we bring that vision to life—brilliantly.”</p>
           <a href="#services" class="hero-button">Explore Our Services</a>
         </div>
       </div>
@@ -335,6 +336,8 @@
         That dedication is a key reason our web designs earn recognition and praise around the world.
       </p>
 
+
+
       <!-- Gallery Grid -->
       <div class="grid" id="galleryGrid">
         <!-- Item 1 -->
@@ -367,14 +370,16 @@
     </section>
 
     <!-- Lightbox (UI Designs) -->
-    <div id="ui-lightbox" role="dialog" aria-modal="true" aria-label="Full size design preview">
-      <div class="lb-stage loading" aria-live="polite">
-        <button class="lb-close" aria-label="Close">✕</button>
-        <button class="lb-arrow lb-prev" aria-label="Previous">◀</button>
-        <button class="lb-arrow lb-next" aria-label="Next">▶</button>
-        <img class="lb-img" alt="">
-      </div>
-    </div>
+ <!-- Place this near the end of <body>, outside <main> -->
+<div id="ui-lightbox" role="dialog" aria-modal="true" aria-label="Full size design preview">
+  <div class="lb-stage loading" aria-live="polite">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <button class="lb-arrow lb-prev" aria-label="Previous">◀</button>
+    <button class="lb-arrow lb-next" aria-label="Next">▶</button>
+    <img class="lb-img" alt="">
+  </div>
+</div>
+
 
     <hr class="section-divider" />
 

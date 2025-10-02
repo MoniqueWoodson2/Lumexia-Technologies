@@ -1,0 +1,85 @@
+<!-- ===================
+    header.html
+ =================== -->
+
+<div id="progressbar" aria-hidden="true"></div>
+
+<header id="site-header">
+  <style>
+    #site-header {
+      position: fixed; top: 0; left: 0; width: 100%;
+  background: rgba(0, 0, 0, 0.921);
+  border: 3px solid goldenrod;
+  border-radius: 1px;
+  padding: 10px; margin: 0; box-sizing: border-box;
+  z-index: 1000;
+    }
+
+    #progressbar {
+      position: fixed; top: 0; left: 0; height: 4px; width: 0;
+      background: linear-gradient(90deg, goldenrod, maroon);
+      z-index: 10000;
+      box-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+
+    .nav-container {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo img { width: 250px; height: auto; border-radius: 4px; display:block; }
+
+    ul.nav {
+      list-style: none; display: flex; justify-content: right;
+      gap: 50px; padding: 0; margin: 0;
+    }
+    ul.nav li { display: inline-block; }
+    ul.nav li a {
+      position: relative;
+      text-decoration: none; font-size: 20px; padding: 10px;
+      color: goldenrod; font-weight: bold;
+      transition: color .25s ease;
+    }
+
+    ul.nav li a::after {
+      content: ""; position: absolute; left: 0; bottom: 2px; height: 2px; width: 0;
+      background: linear-gradient(90deg, goldenrod, maroon); transition: width .25s ease;
+    }
+
+    ul.nav li a:hover { color: maroon; }
+    ul.nav li a:hover::after,
+    ul.nav li.active a::after { width: 100%; }
+    ul.nav li.active a { color: maroon; }
+
+    .hamburger {
+      display: none; font-size: 30px; color: goldenrod;
+      cursor: pointer; padding: 10px;
+    }
+
+    @media (max-width: 1024px) {
+      .hamburger { display: block; }
+      ul.nav {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; right: 20px;
+        background-color: black; border: 2px solid goldenrod; border-radius: 8px;
+        padding: 16px; z-index: 1100; gap: 10px;
+      }
+      ul.nav.show { display: flex; }
+    }
+  </style>
+
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html" aria-label="Lumexia Technologies — Home">
+        <img src="Images/Lumexia Technologies 2.jpg" alt="Lumexia Logo" />
+      </a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+    <ul class="nav" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+</header>

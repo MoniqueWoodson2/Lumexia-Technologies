@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumexia Technologies — Packages</title>
+  <link rel="icon" type="image/png" href="Images/Lumexia Technologies2.PNG" />
+  <link rel="stylesheet" href="styleSheet/lumexia-styles.css" />
+</head>
+<body>
+  <!-- Slim progress bar -->
+  <div id="progressbar" aria-hidden="true"></div>
+
+  <!-- Header mount -->
+  <div id="header-container"></div>
+
+  <main>
+    <!-- Packages Section ONLY -->
+    <section class="packages-container reveal" id="packages-container">
+      <h2 class="package-heading">Service Packages</h2>
+      <p class="package-subheading">
+        Choose the engagement that fits your team: pure UI design, development only, or an end-to-end bundle that includes both.
+      </p>
+
+      <!-- Package Navigation Tabs -->
+      <nav class="package-nav" aria-label="Service package categories">
+        <button class="package-tab active" data-target="ui-design">UI Designs Only</button>
+        <button class="package-tab" data-target="web-dev">Website Development Only</button>
+        <button class="package-tab" data-target="full-bundle">Full Website + UI Design</button>
+      </nav>
+
+      <!-- UI Designs Only -->
+      <div id="ui-design" class="package-content active" role="region" aria-labelledby="ui-design-tab">
+        <div class="package-box">
+          <h3>Wireframe Starter</h3>
+          <p class="price">$199</p>
+          <p class="tagline">Low-fidelity wireframes to validate structure and flow.</p>
+          <ul>
+            <li>Up to 5 screens (desktop/mobile)</li>
+            <li>UX flows & page hierarchy</li>
+            <li>Click-through prototype (Figma)</li>
+            <li>1 Round of revisions</li>
+            <li>3–5 day delivery</li>
+          </ul>
+          <button class="order-button" data-package="UI: Wireframe Starter">Start Wireframe</button>
+        </div>
+
+        <div class="package-box">
+          <h3>UI Essentials</h3>
+          <p class="price">$499</p>
+          <p class="tagline">Polished high-fidelity mockups ready for handoff.</p>
+          <ul>
+            <li>Up to 7 screens (desktop & mobile)</li>
+            <li>Color, typography, spacing system</li>
+            <li>Interactive prototype (Figma)</li>
+            <li>Exportable assets & handoff notes</li>
+            <li>2 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="UI: Essentials">Start Essentials</button>
+        </div>
+
+        <div class="package-box">
+          <h3>UI Pro System</h3>
+          <p class="price">$899</p>
+          <p class="tagline">Design system + components for scale and consistency.</p>
+          <ul>
+            <li>Up to 12 screens</li>
+            <li>Design system (buttons, forms, states)</li>
+            <li>Responsive variants (desktop/tablet/mobile)</li>
+            <li>Accessibility pass (contrast & focus)</li>
+            <li>3 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="UI: Pro System">Start Pro</button>
+        </div>
+      </div>
+
+      <!-- Website Development Only -->
+      <div id="web-dev" class="package-content" role="region" aria-labelledby="web-dev-tab">
+        <div class="package-box">
+          <h3>Dev Starter</h3>
+          <p class="price">$399</p>
+          <p class="tagline">Convert approved designs into a fast, responsive site.</p>
+          <ul>
+            <li>Up to 4 pages</li>
+            <li>Responsive HTML/CSS/JS</li>
+            <li>Contact form + email</li>
+            <li>On-page SEO basics</li>
+            <li>Deploy to Firebase/GitHub Pages</li>
+          </ul>
+          <button class="order-button" data-package="Dev: Starter">Start Dev Starter</button>
+        </div>
+
+        <div class="package-box">
+          <h3>Dev Standard</h3>
+          <p class="price">$899</p>
+          <p class="tagline">Production-ready build with performance and analytics.</p>
+          <ul>
+            <li>Up to 8 pages</li>
+            <li>Reusable components & partials</li>
+            <li>Image optimization & lazy loading</li>
+            <li>Analytics + basic schema markup</li>
+            <li>2 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="Dev: Standard">Start Dev Standard</button>
+        </div>
+
+        <div class="package-box">
+          <h3>Dev Advanced</h3>
+          <p class="price">$1,499</p>
+          <p class="tagline">Dynamic features & admin hooks ready for growth.</p>
+          <ul>
+            <li>Up to 15 pages</li>
+            <li>Blog/news or collections structure</li>
+            <li>Auth-ready structure (Firebase)</li>
+            <li>Forms, modals, sliders, reviews</li>
+            <li>3 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="Dev: Advanced">Start Dev Advanced</button>
+        </div>
+      </div>
+
+      <!-- Full Website + UI Design -->
+      <div id="full-bundle" class="package-content" role="region" aria-labelledby="full-bundle-tab">
+        <div class="package-box">
+          <h3>Bundle Basic</h3>
+          <p class="price">$799</p>
+          <p class="tagline">Design + build for a clean, effective online presence.</p>
+          <ul>
+            <li>UI: Up to 5 screens (hi-fi)</li>
+            <li>Dev: Up to 5 pages</li>
+            <li>Contact form + SEO basics</li>
+            <li>Mobile-first responsive build</li>
+            <li>2 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="Bundle: Basic">Start Bundle Basic</button>
+        </div>
+
+        <div class="package-box">
+          <h3>Bundle Growth</h3>
+          <p class="price">$1,699</p>
+          <p class="tagline">Polished brand experience with scalable structure.</p>
+          <ul>
+            <li>UI: Up to 10 screens + design system</li>
+            <li>Dev: Up to 10 pages</li>
+            <li>Performance & accessibility pass</li>
+            <li>Analytics + on-page SEO</li>
+            <li>3 Rounds of revisions</li>
+          </ul>
+          <button class="order-button" data-package="Bundle: Growth">Start Bundle Growth</button>
+        </div>
+
+        <div class="package-box">
+          <h3>Bundle Elite</h3>
+          <p class="price">$2,999</p>
+          <p class="tagline">End-to-end, premium custom site with advanced features.</p>
+          <ul>
+            <li>UI: Up to 16 screens + full component library</li>
+            <li>Dev: Up to 18 pages + advanced interactions</li>
+            <li>Reviews, galleries, sliders, modals</li>
+            <li>Admin-ready data structure (Firebase)</li>
+            <li>Unlimited revisions (within scope)</li>
+          </ul>
+          <button class="order-button" data-package="Bundle: Elite">Start Bundle Elite</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Modal (added) -->
+    <div id="contact-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button" aria-label="Close">&times;</span>
+        <h2>We're ready to listen...</h2>
+
+        <form class="contact-form" id="contactForm">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number*</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="package">Select Your Package*</label>
+          <select id="package" name="package" required>
+            <option value="">-- Choose a Package --</option>
+
+            <!-- UI Designs Only -->
+            <optgroup label="UI Designs Only">
+              <option value="UI: Wireframe Starter">UI: Wireframe Starter</option>
+              <option value="UI: Essentials">UI: Essentials</option>
+              <option value="UI: Pro System">UI: Pro System</option>
+            </optgroup>
+
+            <!-- Website Development Only -->
+            <optgroup label="Website Development Only">
+              <option value="Dev: Starter">Dev: Starter</option>
+              <option value="Dev: Standard">Dev: Standard</option>
+              <option value="Dev: Advanced">Dev: Advanced</option>
+            </optgroup>
+
+            <!-- Full Website + UI Design -->
+            <optgroup label="Full Website + UI Design">
+              <option value="Bundle: Basic">Bundle: Basic</option>
+              <option value="Bundle: Growth">Bundle: Growth</option>
+              <option value="Bundle: Elite">Bundle: Elite</option>
+            </optgroup>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project, goals, and timeline..."></textarea>
+
+          <div class="submit-container">
+            <button type="submit" class="submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer mount -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js File/script.js"></script>
+  <script type="module" src="js File/firebase.js"></script>
+
+  <!-- Back to top -->
+  <button id="backToTop" title="Go to top" aria-label="Back to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
+</body>
+</html>

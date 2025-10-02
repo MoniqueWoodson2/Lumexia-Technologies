@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumexia Technologies — Web Designs</title>
+  <link rel="icon" type="image/png" href="Images/Lumexia Technologies2.PNG" />
+  <link rel="stylesheet" href="styleSheet/lumexia-styles.css" />
+</head>
+<body>
+  <!-- Slim progress bar -->
+  <div id="progressbar" aria-hidden="true"></div>
+
+  <!-- Header mount -->
+  <div id="header-container"></div>
+
+  <main>
+    <!-- Our UI / Figma Designs Section -->
+    <section class="ui-designs-container reveal" id="ui-designs-container" aria-labelledby="ui-designs-heading">
+      <h2 class="ui-designs-heading" id="ui-designs-heading">Web Designs Everyone Loves</h2>
+      <p class="ui-designs-subheading">
+        We prioritize client satisfaction in every project, making it our top mission.<br>
+        That dedication is a key reason our web designs earn recognition and praise around the world.
+      </p>
+
+      <!-- Gallery Grid -->
+      <div class="grid" id="galleryGrid">
+        <!-- Item 1 -->
+        <figure class="item" tabindex="0"
+                data-category="Web Design"
+                data-full="Images/ui/PECE - Index.html.png">
+          <div class="thumb">
+            <img src="Images/ui/PECE - Index.html.png" alt="PCEC" loading="lazy">
+          </div>
+        </figure>
+
+        <!-- Item 2 -->
+        <figure class="item" tabindex="0"
+                data-category="E-Commerce, Clothing"
+                data-full="Images/ui/TrulyUnique - Index.html.png">
+          <div class="thumb">
+            <img src="Images/ui/TrulyUnique - Index.html.png" alt="Truly Unique" loading="lazy">
+          </div>
+        </figure>
+
+        <!-- Item 3 -->
+        <figure class="item" tabindex="0"
+                data-category="Health / Fitness"
+                data-full="Images/ui/Fitness - Index.html.png">
+          <div class="thumb">
+            <img src="Images/ui/Fitness - Index.html.png" alt="Fitness" loading="lazy">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox (UI Designs) -->
+    <div id="ui-lightbox" role="dialog" aria-modal="true" aria-label="Full size design preview">
+      <div class="lb-stage loading" aria-live="polite">
+        <button class="lb-close" aria-label="Close">✕</button>
+        <button class="lb-arrow lb-prev" aria-label="Previous">◀</button>
+        <button class="lb-arrow lb-next" aria-label="Next">▶</button>
+        <img class="lb-img" alt="">
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer mount -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js File/script.js"></script>
+  <script type="module" src="js File/firebase.js"></script>
+
+  <!-- Back to top -->
+  <button id="backToTop" title="Go to top" aria-label="Back to top">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
+</body>
+</html>
